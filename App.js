@@ -8,6 +8,8 @@ import { Platform } from "react-native";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import Header from "./Header";
+import Footer from "./Footer";
+import { navigationRef } from "./RootNavigation";
 
 const Stack = createStackNavigator();
 
@@ -25,6 +27,7 @@ export default function App() {
         style={{
           paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         }}
+        ref={navigationRef}
       >
         {/* we set headermode to be part of screen, so that we dont need to animate separately  */}
         <Stack.Navigator initialRouteName="Globomantics" headerMode="screen">
@@ -36,6 +39,7 @@ export default function App() {
             }}
           />
         </Stack.Navigator>
+        <Footer />
       </NavigationContainer>
     );
   }
