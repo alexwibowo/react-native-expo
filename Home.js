@@ -26,6 +26,7 @@ export default function Homepage({ navigation }) {
       .finally(() => finishLoading(false));
   }, []);
 
+  // this is like cell renderer, used  in FlatList
   const storyItem = ({ item }) => {
     return (
       <TouchableWithoutFeedback
@@ -84,6 +85,6 @@ const styles = StyleSheet.create({
   },
   blurb: {
     fontFamily: "OpenSans",
-    fontStyle: 'italic',    
-  }
+    fontStyle: "italic",
+  },
 });
